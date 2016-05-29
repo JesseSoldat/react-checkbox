@@ -19,9 +19,16 @@
 			setTimeout(function(){console.log(component.state.checked);},300);
 		},
 		render: function(){
+			var msg = '';
+			if(this.state.checked) {
+				msg = 'Checked';
+			} else {
+				msg = 'Not Checked';
+			}
 			return (
 				<div>
 					<input onClick={this.handleClick} type="checkbox" />
+					{msg}
 				</div>
 				);
 		}
