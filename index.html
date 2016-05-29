@@ -8,6 +8,26 @@
 <body>
 <div id="root"></div>
 <script type="text/babel">
+	var Checkbox = React.createClass({
+		getInitialState: function(){
+			return({checked: false});
+		},
+		handleClick: function(){
+			this.setState({checked: !this.state.checked});
+
+			var component = this;
+			setTimeout(function(){console.log(component.state.checked);},300);
+		},
+		render: function(){
+			return (
+				<div>
+					<input onClick={this.handleClick} type="checkbox" />
+				</div>
+				);
+		}
+	});
+
+	ReactDOM.render(<Checkbox />, document.getElementById('root'));
 
 </script>
 </body>
